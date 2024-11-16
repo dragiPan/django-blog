@@ -27,8 +27,9 @@ SECRET_KEY = 'django-insecure-4&zosck=zdvf8x5gu-&8wwj_fv*5q-zz&b%6#)^&w#2fjj#$7v
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    getenv("APP_HOST")
+    getenv("APP_HOST").strip("/") if getenv("APP_HOST") else "127.0.0.1"
 ]
+
 
 
 # Application definition
